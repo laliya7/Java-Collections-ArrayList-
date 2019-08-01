@@ -1,4 +1,13 @@
-package myFirstJavaCode2;
+/*
+Small project on ArrayList...
+It asks how many persons you want to enter in the list
+you can enter many as you want and also details of them
+you can edit also
+but when you edit it asks for the index, computer counts from 0 
+so if you want to edit member 1 enter index 0
+Thank you..
+You can contribute here
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 
