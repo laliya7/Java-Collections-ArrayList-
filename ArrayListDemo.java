@@ -1,13 +1,4 @@
-/*
-Small project on ArrayList...
-It asks how many persons you want to enter in the list
-you can enter many as you want and also details of them
-you can edit also
-but when you edit it asks for the index, computer counts from 0 
-so if you want to edit member 1 enter index 0
-Thank you..
-You can contribute here
-*/
+package myFirstJavaCode2;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,7 +15,6 @@ class ArrayListClass {
 		this.age = age;
 		this.weight = weight;
 		this.height = height;
-		
 	}
 }
 
@@ -75,7 +65,8 @@ public class ArrayListDemo {
 		
 		int index = 0;
 		//obj.show();
-		System.out.println("Names\tAge\tWeight\tHeight");
+		System.out.println();
+		System.out.println("Index\tNames\tAge\tWeight\tHeight");
 		for(int i=0;i<names.size();i++) {
 			//you can write any of the int in **for(int i=0;i<names.size();i++)**
 			//like for(int i=0;i<ages.size();i++) or
@@ -83,13 +74,13 @@ public class ArrayListDemo {
 			//because the size of these int and String will be same 
 			//because of the for loop above
 			//try to understand
-			System.out.println(names.get(index)+"\t"+ages.get(index)+"\t"+
+			System.out.println(index+"\t"+names.get(index)+"\t"+ages.get(index)+"\t"+
 										weights.get(index)+"\t"+heights.get(index));
 			index++;
 		}
 		
 		System.out.println();
-		System.out.print("Enter 1 to edit any member >> ");
+		System.out.print("Enter 1 to edit & 2 to delete any member >> ");
 		int number = input.nextInt();
 		input.nextLine();
 		
@@ -119,17 +110,42 @@ public class ArrayListDemo {
 			newHeight = indexing.nextInt();
 			newHeight = heights.set(num, newHeight);
 			
+			System.out.println();
 			System.out.println("Updated version!");
 			
 			index = 0;
-			System.out.println("Names\tAge\tWeight\tHeight");
+			System.out.println("Index\tNames\tAge\tWeight\tHeight");
 			for(int i=0;i<names.size();i++) {
-				System.out.println(names.get(index)+"\t"+ages.get(index)+"\t"+
+				System.out.println(index+"\t"+names.get(index)+"\t"+ages.get(index)+"\t"+
 						weights.get(index)+"\t"+heights.get(index));
 						index++;
 			}
+			break;
+			
+		case 2:
+			System.out.print("Enter index: ");
+			num = indexing.nextInt();
+			indexing.nextLine();
+			names.remove(num);
+			ages.remove(num);
+			weights.remove(num);
+			heights.remove(num);
+			
+			System.out.println();
+			System.out.println(num+" index member deleted!");
+			
+			index = 0;
+			System.out.println("Index\tNames\tAge\tWeight\tHeight");
+			for(int i=0;i<names.size();i++) {
+				System.out.println(index+"\t"+names.get(index)+"\t"+ages.get(index)+"\t"+
+						weights.get(index)+"\t"+heights.get(index));
+						index++;
+			}
+			break;
 		}
-		
+	
+		input.close();
+		indexing.close();
 	}
 
 }
